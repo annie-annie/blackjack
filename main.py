@@ -17,15 +17,29 @@
 # if over player wins
 # If win then win
 
+from Card import Card
 from Deck import Deck
 deck = Deck()
 
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
-print(deck.getCard())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+card = deck.getCard()
+print(card, card.getValue())
+
+
+broken = Card('$', 't')
+broken.getValue()
