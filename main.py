@@ -16,3 +16,9 @@
 # if not hit & repeat
 # if over player wins
 # If win then win
+
+from Deck import Deck
+deck = Deck()
+
+for card in deck.cards:
+    print(card)
