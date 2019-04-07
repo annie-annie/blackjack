@@ -20,5 +20,12 @@
 from Deck import Deck
 deck = Deck()
 
-for card in deck.cards:
-    print(card)
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())
+print(deck.getCard())

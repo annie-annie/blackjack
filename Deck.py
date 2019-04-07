@@ -1,3 +1,6 @@
+from random import randint
+
+
 class Card():
     def __init__(self, suite, cardType):
         self.suite = suite
@@ -24,5 +27,5 @@ class Deck():
     cards = getFreshDeck()
 
     def getCard(self):
-        randomNumber = 2
+        randomNumber = randint(0, len(self.cards) - 1)
         return self.cards.pop(randomNumber)
