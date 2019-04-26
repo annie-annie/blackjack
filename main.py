@@ -19,27 +19,16 @@
 
 from Card import Card
 from Deck import Deck
+from Player import Player
+
 deck = Deck()
+computer = Player()
+human = Player()
 
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
-card = deck.getCard()
-print(card, card.getValue())
+# Deal cards to computer
+computer.hit(deck.getCard())
+computer.hit(deck.getCard())
 
-
-broken = Card('$', 't')
-broken.getValue()
+# Deal cards to human
+human.hit(deck.getCard())
+human.hit(deck.getCard())
