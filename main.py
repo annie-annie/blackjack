@@ -22,12 +22,12 @@ from Deck import Deck
 from Player import Player
 
 deck = Deck()
-computer = Player()
+dealer = Player()
 human = Player()
 
-# Deal cards to computer
-computer.hit(deck.getCard())
-computer.hit(deck.getCard())
+# Deal cards to dealer
+dealer.hit(deck.getCard())
+dealer.hit(deck.getCard())
 
 # Deal cards to human
 human.hit(deck.getCard())
