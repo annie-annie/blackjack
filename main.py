@@ -39,7 +39,7 @@ def play():
     # Reveal dealer hand
     dealer.showHand()
 
-    # Game ends if dealer has a higher total than the player
+    # Game ends if dealer has a higher total than the human
     if human.getTotal() < dealer.getTotal():
         return 'Sorry dealer has a better hand, you loose'
 
@@ -55,7 +55,7 @@ def play():
         elif human.getTotal() < dealer.getTotal():
             return 'Sorry dealer has a better hand, you loose'
 
-    # Game ends and player wins when his total is more than the dealers
+    # Game ends and human wins when his total is more than the dealers
     return f'Dealer sticks at {dealer.getTotal()}, you win'
 
 
@@ -63,6 +63,5 @@ print(play())
 
 
 # TODO:
-# 1. rename human to player
 # 2. Implement ace logic
 # 3. Implement wallet/pot
