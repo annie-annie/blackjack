@@ -27,8 +27,8 @@ from Player import Player
 
 def play():
     deck = Deck()
-    dealer = Player()
-    human = Player()
+    dealer = Player('Dealer')
+    human = Player('Human')
 
     # Deal cards to dealer
     dealer.hit(deck.getCard())

@@ -2,8 +2,9 @@ from functools import reduce
 
 
 class Player():
-    def __init__(self):
+    def __init__(self, name):
         self.hand = []
+        self.name = name
 
     def hit(self, card):
         self.hand.append(card)
@@ -24,4 +25,4 @@ class Player():
 
     def showHand(self):
         cardString = ' '.join([str(card) for card in self.hand])
-        return print(f'Your hand: {cardString}\tTotal: {self.getTotal()}')
+        return print(f'{self.name} hand: {cardString}\tTotal: {self.getTotal()}')
