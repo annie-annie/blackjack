@@ -46,15 +46,12 @@ def play():
     if human.has21():
         return '21 already, you\'ve won'
 
-    # TODO: # Ask Human hit/stick
+    # Ask Human hit/stick
     while(input('Hit or stick?') == 'hit'):
         # TODO: validation
-        card = deck.getCard()
-        human.hit(card)
-
+        human.hit(deck.getCard())
         human.showHand()
 
-        # Check if human has won
         if human.has21():
             return '21 already, you\'ve won'
         elif human.isBust():
