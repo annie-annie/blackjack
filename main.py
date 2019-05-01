@@ -63,5 +63,4 @@ print(play())
 
 
 # TODO:
-# 2. Implement ace logic
 # 3. Implement wallet/pot
