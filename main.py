@@ -40,7 +40,7 @@ def play():
 
     # Show cards
     print('Dealer Hand: ', '[]', dealer.hand[1])
-    print('Your Hand: ', human.hand[0], human.hand[1])
+    human.showHand()
 
     # Check if human has won naturally
     if human.has21():
