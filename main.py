@@ -57,5 +57,24 @@ def play():
         elif human.isBust():
             return 'Tough luck, you are bust'
 
+    # Show dealer hand
+    dealer.showHand()
+
+    # Check if computer has won
+    if human.getTotal() < dealer.getTotal():
+        return 'Sorry dealer has a better hand, you loose'
+
+    # If the dealer has less than 17 he gets more cars
+    while(dealer.getTotal() < 17):
+        dealer.hit(deck.getCard())
+        dealer.showHand()
+
+        if dealer.isBust():
+            return 'Dealer went bust, you win'
+        elif human.getTotal() < dealer.getTotal():
+            return 'Sorry dealer has a better hand, you loose'
+
+    return f'Dealer sticks at {dealer.getTotal()}, you win'
+
 
 print(play())
