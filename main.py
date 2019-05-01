@@ -38,7 +38,11 @@ def play():
     human.hit(deck.getCard())
     human.hit(deck.getCard())
 
-    # Check if human won
+    # Show cards
+    print('Dealer Hand: ', '[]', dealer.hand[1])
+    print('Your Hand: ', human.hand[0], human.hand[1])
+
+    # Check if human has won naturally
     if human.hasNaturalWin():
         return '21 already, you\'ve won'
 
