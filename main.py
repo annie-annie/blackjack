@@ -3,6 +3,7 @@ from Deck import Deck
 from Dealer import Dealer
 from Human import Human
 from Wallet import Wallet
+from GameResult import GameResult
 
 
 def play():
@@ -25,7 +26,7 @@ def play():
 
     # Check if human has won naturally
     if human.has21():
-        return '21 already, you\'ve won'
+        return GameResult(True, '21 already, you\'ve won')
 
     # Ask Human hit/stick
     while(input('Hit or stick?') == 'hit'):
@@ -34,17 +35,18 @@ def play():
 
         # Game ends if human has won with 21
         if human.has21():
-            return '21 already, you\'ve won'
+            return GameResult(True, '21 already, you\'ve won')
+
         # Game ends if human is bust
         elif human.isBust():
-            return 'Tough luck, you are bust'
+            return GameResult(False, 'Tough luck, you are bust')
 
     # Reveal dealer hand
     dealer.showHand()
 
     # Game ends if dealer has a higher total than the human
     if human.getTotal() < dealer.getTotal():
-        return 'Sorry dealer has a better hand, you loose'
+        return GameResult(False, 'Sorry dealer has a better hand')
 
     # If the dealer has less than 17 he gets more cars
     while(dealer.getTotal() < 17):
@@ -53,16 +55,18 @@ def play():
 
         # Game ends if human is bust
         if dealer.isBust():
-            return 'Dealer went bust, you win'
+            return GameResult(True, 'Dealer went bust, you win')
+
         # Game ends if dealer has a higher total than the human
         elif human.getTotal() < dealer.getTotal():
-            return 'Sorry dealer has a better hand, you loose'
+            return GameResult(False, 'Sorry dealer has a better hand')
 
     # Game ends and human wins when his total is more than the dealers
-    return f'Dealer sticks at {dealer.getTotal()}, you win'
+    return GameResult(True, f'Dealer sticks at {dealer.getTotal()}')
 
 
-print(play())
+result = play()
+print(result)
 
 
 # TODO:
