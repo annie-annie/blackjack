@@ -17,9 +17,16 @@
 # if over player wins
 # If win then win
 
+from functools import reduce
+
 from Card import Card
 from Deck import Deck
 from Player import Player
+
+
+def getTotal(hand):
+    return reduce(lambda x, y: int(x) + int(y), hand)
+
 
 deck = Deck()
 dealer = Player()
@@ -42,4 +49,4 @@ card2 = deck.getCard()
 print(card1)
 print(card2)
 
-print(card1 + card1)
+print(getTotal([card1, card2, card1]))
