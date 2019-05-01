@@ -3,6 +3,8 @@
 # Deal cards to computer
 # Deal cards to human
 
+# Check if human has won naturally
+
 # Ask Human hit/stick
 
 # Case stick go to computer
