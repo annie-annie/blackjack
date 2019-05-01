@@ -23,23 +23,22 @@ from Deck import Deck
 from Player import Player
 
 
-deck = Deck()
-dealer = Player()
-human = Player()
+def play():
+    deck = Deck()
+    dealer = Player()
+    human = Player()
 
-# Deal cards to dealer
-dealer.hit(deck.getCard())
-dealer.hit(deck.getCard())
+    # Deal cards to dealer
+    dealer.hit(deck.getCard())
+    dealer.hit(deck.getCard())
 
-# Deal cards to human
-human.hit(deck.getCard())
-human.hit(deck.getCard())
+    # Deal cards to human
+    human.hit(deck.getCard())
+    human.hit(deck.getCard())
 
-# Check if human won
-print(human.hand[0])
-print(human.hand[1])
+    # Check if human won
+    if human.hasNaturalWin():
+        return '21 already, you\'ve won'
 
-if human.hasNaturalWin():
-    print('21 already, you\'ve won')
 
-print(human.getTotal())
+print(play())
