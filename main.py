@@ -52,15 +52,17 @@ def play():
         human.hit(deck.getCard())
         human.showHand()
 
+        # Game ends if human has won with 21
         if human.has21():
             return '21 already, you\'ve won'
+        # Game ends if human is bust
         elif human.isBust():
             return 'Tough luck, you are bust'
 
-    # Show dealer hand
+    # Reveal dealer hand
     dealer.showHand()
 
-    # Check if computer has won
+    # Game ends if dealer has a higher total than the player
     if human.getTotal() < dealer.getTotal():
         return 'Sorry dealer has a better hand, you loose'
 
@@ -69,11 +71,14 @@ def play():
         dealer.hit(deck.getCard())
         dealer.showHand()
 
+        # Game ends if human is bust
         if dealer.isBust():
             return 'Dealer went bust, you win'
+        # Game ends if dealer has a higher total than the human
         elif human.getTotal() < dealer.getTotal():
             return 'Sorry dealer has a better hand, you loose'
 
+    # Game ends and player wins when his total is more than the dealers
     return f'Dealer sticks at {dealer.getTotal()}, you win'
 
 
