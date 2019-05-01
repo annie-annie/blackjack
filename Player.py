@@ -16,5 +16,12 @@ class Player():
         # with `TypeError: unsupported operand type(s) for +: 'int' and 'Card'`
         return reduce(lambda x, y: y + x, self.hand)
 
-    def hasNaturalWin(self):
-        return self.hand[0] + self.hand[1] == 21
+    def has21(self):
+        return self.getTotal() == 21
+
+    def isBust(self):
+        return self.getTotal() > 21
+
+    def showHand(self):
+        cardString = ' '.join([str(card) for card in self.hand])
+        return print(f'{cardString}\tTotal: {self.getTotal()}')

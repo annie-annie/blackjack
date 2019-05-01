@@ -43,8 +43,22 @@ def play():
     print('Your Hand: ', human.hand[0], human.hand[1])
 
     # Check if human has won naturally
-    if human.hasNaturalWin():
+    if human.has21():
         return '21 already, you\'ve won'
+
+    # TODO: # Ask Human hit/stick
+    while(input('Hit or stick?') == 'hit'):
+        # TODO: validation
+        card = deck.getCard()
+        human.hit(card)
+
+        human.showHand()
+
+        # Check if human has won
+        if human.has21():
+            return '21 already, you\'ve won'
+        elif human.isBust():
+            return 'Tough luck, you are bust'
 
 
 print(play())
