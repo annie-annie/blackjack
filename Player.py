@@ -2,9 +2,8 @@ from functools import reduce
 
 
 class Player():
-    def __init__(self, name):
+    def __init__(self):
         self.hand = []
-        self.name = name
 
     def hit(self, card):
         self.hand.append(card)

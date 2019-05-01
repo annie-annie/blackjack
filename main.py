@@ -1,12 +1,13 @@
 from Card import Card
 from Deck import Deck
-from Player import Player
+from Dealer import Dealer
+from Human import Human
 
 
 def play():
     deck = Deck()
-    dealer = Player('Dealer')
-    human = Player('Human')
+    dealer = Dealer()
+    human = Human()
 
     # Deal cards to dealer
     dealer.hit(deck.getCard())
