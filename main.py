@@ -25,7 +25,9 @@ from Player import Player
 
 
 def getTotal(hand):
-    return reduce(lambda x, y: int(x) + int(y), hand)
+    # order for addition needs to be card, then integer or it errors
+    # with `TypeError: unsupported operand type(s) for +: 'int' and 'Card'`
+    return reduce(lambda x, y: y + x, hand)
 
 
 deck = Deck()
@@ -49,4 +51,4 @@ card2 = deck.getCard()
 print(card1)
 print(card2)
 
-print(getTotal([card1, card2, card1]))
+print(getTotal([card1, card2, card1, card2]))

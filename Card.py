@@ -20,3 +20,6 @@ class Card():
             '`{}` is not a valid card in a 52 card deck'
             .format(self.cardType)
         )
+
+    def __add__(self, other):
+        return int(self) + int(other)
