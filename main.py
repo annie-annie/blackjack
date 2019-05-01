@@ -78,3 +78,9 @@ def play():
 
 
 print(play())
+
+
+# TODO:
+# 1. rename human to player
+# 2. Implement ace logic
+# 3. Implement wallet/pot
