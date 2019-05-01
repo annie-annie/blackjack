@@ -1,25 +1,3 @@
-# Main program
-
-# Deal cards to computer
-# Deal cards to human
-
-# Check if human has won naturally
-
-# Ask Human hit/stick
-
-# Case stick go to computer
-
-# Case hit >
-# if over computer wins
-# if under Ask Human to hit or stick
-
-# Computer
-# Check if computer has won
-# if not hit & repeat
-# if over player wins
-# If win then win
-
-
 from Card import Card
 from Deck import Deck
 from Player import Player
@@ -48,7 +26,6 @@ def play():
 
     # Ask Human hit/stick
     while(input('Hit or stick?') == 'hit'):
-        # TODO: validation
         human.hit(deck.getCard())
         human.showHand()
 
