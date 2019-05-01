@@ -24,4 +24,4 @@ class Player():
 
     def showHand(self):
         cardString = ' '.join([str(card) for card in self.hand])
-        return print(f'{cardString}\tTotal: {self.getTotal()}')
+        return print(f'Your hand: {cardString}\tTotal: {self.getTotal()}')
