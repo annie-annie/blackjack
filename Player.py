@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 class Player():
     hand = []
 
@@ -6,3 +9,8 @@ class Player():
 
     def isBust(self):
         return sum(self.hand) > 21
+
+    def getTotal(self):
+        # order for addition needs to be card, then integer or it errors
+        # with `TypeError: unsupported operand type(s) for +: 'int' and 'Card'`
+        return reduce(lambda x, y: y + x, self.hand)
