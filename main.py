@@ -27,6 +27,10 @@ deck = Deck()
 dealer = Player()
 human = Player()
 
+# Deal cards to dealer
+dealer.hit(deck.getCard())
+dealer.hit(deck.getCard())
+
 # Deal cards to human
 human.hit(deck.getCard())
 human.hit(deck.getCard())
@@ -37,3 +41,5 @@ print(human.hand[1])
 
 if human.hasNaturalWin():
     print('21 already, you\'ve won')
+
+print(human.getTotal())
