@@ -14,3 +14,6 @@ class Player():
         # order for addition needs to be card, then integer or it errors
         # with `TypeError: unsupported operand type(s) for +: 'int' and 'Card'`
         return reduce(lambda x, y: y + x, self.hand)
+
+    def hasNaturalWin(self):
+        return self.hand[0] + self.hand[1] == 21

@@ -35,5 +35,5 @@ human.hit(deck.getCard())
 print(human.hand[0])
 print(human.hand[1])
 
-
-print(human.getTotal())
+if human.hasNaturalWin():
+    print('21 already, you\'ve won')
