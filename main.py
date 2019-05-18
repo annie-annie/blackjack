@@ -70,12 +70,22 @@ def game():
     wallet = Wallet()
 
     while (input("\033[1;36;40m Play (y/n)?") == 'y'):
-        # Ask human to bet
-        # If he wants to bet more than wallet say no and ask again
+        bet = int(input(
+            f"You have {wallet.currentValue}, how much would you like to bet?"
+        ))
+
+        while (bet > wallet.currentValue):
+            bet = int(input(
+                f"You have {wallet.currentValue}, but you bet {bet}, please do not enter more than you have!"
+            ))
 
         result = play(wallet)
 
-        # IF won add money to wallet
+        if(result.humanHasWon):
+            wallet.win(bet)
+        else:
+            wallet.loose(bet)
+
         print(result)
 
 
