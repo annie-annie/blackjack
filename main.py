@@ -6,11 +6,8 @@ from Wallet import Wallet
 from GameResult import GameResult
 
 
-def play():
+def play(dealer, human):
     deck = Deck()
-    dealer = Dealer()
-    wallet = Wallet()
-    human = Human(wallet)
 
     # Deal cards to dealer
     dealer.hit(deck.getCard())
@@ -66,8 +63,13 @@ def play():
 
 
 def game():
-    print(f"\033[1;35;40m New game \n")
-    result = play()
+    print(f"\033[1;35;40m New game! \n")
+
+    dealer = Dealer()
+    wallet = Wallet()
+    human = Human(wallet)
+
+    result = play(dealer, human)
     print(result)
     return input('Play Again (y/n)?') == 'y'
 
