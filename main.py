@@ -66,6 +66,7 @@ def play():
 
 
 def game():
+    print(f"\033[1;35;40m New game \n")
     result = play()
     print(result)
     return input('Play Again (y/n)?') == 'y'
