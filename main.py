@@ -90,6 +90,3 @@ def game():
 
 
 game()
-
-# TODO:
-# 3. Implement wallet/pot
