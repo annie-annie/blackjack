@@ -71,7 +71,7 @@ def game():
 
     result = play(dealer, human)
     print(result)
-    return input('Play Again (y/n)?') == 'y'
+    return input("\033[1;36;40m Play Again (y/n)? \n") == 'y'
 
 
 while(game()):
