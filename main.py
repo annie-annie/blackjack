@@ -63,7 +63,7 @@ def play(dealer, human):
 
 
 def game():
-    print(f"\033[1;35;40m New game! \n")
+    print("\033[1;35;40m New game! \n")
 
     dealer = Dealer()
     wallet = Wallet()
