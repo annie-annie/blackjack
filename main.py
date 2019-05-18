@@ -65,9 +65,14 @@ def play():
     return GameResult(True, f'Dealer sticks at {dealer.getTotal()}')
 
 
-result = play()
-print(result)
+def game():
+    result = play()
+    print(result)
+    return input('Play Again (y/n)?') == 'y'
 
+
+while(game()):
+    pass
 
 # TODO:
 # 3. Implement wallet/pot
