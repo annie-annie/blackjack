@@ -6,8 +6,10 @@ from Wallet import Wallet
 from GameResult import GameResult
 
 
-def play(dealer, human):
+def play(wallet):
     deck = Deck()
+    dealer = Dealer()
+    human = Human(wallet)
 
     # Deal cards to dealer
     dealer.hit(deck.getCard())
@@ -65,17 +67,19 @@ def play(dealer, human):
 def game():
     print("\033[1;35;40m New game! \n")
 
-    dealer = Dealer()
     wallet = Wallet()
-    human = Human(wallet)
 
-    result = play(dealer, human)
-    print(result)
-    return input("\033[1;36;40m Play Again (y/n)?") == 'y'
+    while (input("\033[1;36;40m Play (y/n)?") == 'y'):
+        # Ask human to bet
+        # If he wants to bet more than wallet say no and ask again
+
+        result = play(wallet)
+
+        # IF won add money to wallet
+        print(result)
 
 
-while(game()):
-    pass
+game()
 
 # TODO:
 # 3. Implement wallet/pot
