@@ -5,9 +5,7 @@ class GameResult():
         self.message = message
 
     def __str__(self):
-        lostOrWonString = "WOW! You win!"
-        if self.humanHasWon
-        else "Oh no, you lost!"
+        lostOrWonString = "WOW! You win!" if self.humanHasWon else "Oh no, you lost!"
 
         return self.colourConsoleText(
             f'{lostOrWonString} \t {self.message}', self.humanHasWon
