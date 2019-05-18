@@ -65,7 +65,7 @@ def play(wallet):
 
 
 def game():
-    print("\033[1;35;40m New game! \n")
+    print("\033[1;35;40m Welcome!!! \n")
 
     wallet = Wallet()
 
