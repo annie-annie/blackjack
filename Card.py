@@ -1,10 +1,10 @@
 class Card():
-    def __init__(self, suite, cardType):
-        self.suite = suite
+    def __init__(self, suit, cardType):
+        self.suit = suit
         self.cardType = cardType
 
     def __str__(self):
-        return '{}{}'.format(self.suite, self.cardType)
+        return '{}{}'.format(self.suit, self.cardType)
 
     def __int__(self):
         if(type(self.cardType) == int):

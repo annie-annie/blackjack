@@ -4,12 +4,12 @@ from Card import Card
 
 class Deck():
     def getFreshDeck():
-        suites = ['❤️', '♣️', '♦️', '♠️']
+        suits = ['❤️', '♣️', '♦️', '♠️']
         cardTypes = ['A', *list(range(2, 11)), 'J', 'Q', 'K']
 
         return [
-            Card(suite, cardType)
-            for suite in suites
+            Card(suit, cardType)
+            for suit in suits
             for cardType in cardTypes
         ]
 
