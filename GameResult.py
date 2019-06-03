@@ -1,16 +1,21 @@
 class GameResult():
+    winText = "WOW! You win!"
+    loseText = "Oh no, you lost!"
+    winColour = 32
+    loseColour = 31
 
     def __init__(self, humanHasWon, message):
         self.humanHasWon = humanHasWon
         self.message = message
 
     def __str__(self):
-        lostOrWonString = "WOW! You win!" if self.humanHasWon else "Oh no, you lost!"
+        lostOrWonString = self.winText if self.humanHasWon else self.loseText
+        colour = self.winColour if self.humanHasWon else self.loseColour
 
         return self.colourConsoleText(
-            f'{lostOrWonString} \t {self.message}', self.humanHasWon
+            f'{lostOrWonString} \t {self.message}',
+            colour
         )
 
-    def colourConsoleText(self, text, humanHasWon):
-        colour = "32" if self.humanHasWon else "31"
+    def colourConsoleText(self, text, colour):
         return f"\033[1;{colour};40m {text} \n"
