@@ -11,7 +11,11 @@ class Player():
     def getTotal(self):
         # order for addition needs to be card, then integer or it errors
         # with `TypeError: unsupported operand type(s) for +: 'int' and 'Card'`
-        total = reduce(lambda x, y: y + x, self.hand)
+        # A card knows how to add an integer and a Card,
+        # where as an integer can only add other integers
+        total = reduce(
+            lambda runningTotal, card: card + runningTotal, self.hand
+        )
 
         # if gone over but has ace count ace as 1, not 11
         if total > 21 and self.hasAce():
