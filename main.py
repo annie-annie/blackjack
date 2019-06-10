@@ -28,7 +28,7 @@ def play(wallet):
         return GameResult(True, '21 already, you\'ve won')
 
     # Ask Human hit/stick
-    while(input('Hit or stick?') == 'hit'):
+    while(input('Hit or stick?')[0].lower() == 'h'):
         human.hit(deck.getCard())
         human.showHand()
 
