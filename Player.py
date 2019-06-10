@@ -36,6 +36,7 @@ class Player():
             f'{self.name} hand: {cardString}\tTotal: {self.getTotal()}'
         )
 
+    # TODO: Hand can have more than 1 ace
     def hasAce(self):
         for card in self.hand:
             if card.cardType == 'A':
